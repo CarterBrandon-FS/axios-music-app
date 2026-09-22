@@ -1,6 +1,6 @@
 # 💻 Project & Portfolio II
 
-# Project Name: WDP2 Portfolio Project
+# Project Name: Axion Music
 
 ### Student First & Last Name
 
