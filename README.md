@@ -38,7 +38,7 @@ For each Milestone #2-4, you should use all 4 icons.
 For this milestone you will have created a wireframe prototype in Figma.  
 Post your link here, so you have easy access to it.
 
-![View Figma Prototype](https://www.figma.com/design/A2900fzgq6J3fBhWvSF5x6/Axion-Music)
+![View Figma Prototype](https://www.figma.com/design/A2900fzgq6J3fBhWvSF5x6/Axion-Music?node-id=3-3758&t=MnLzGs9boib0eoJv-1)
 
 <br>
 
