@@ -1,9 +1,10 @@
 import { FaSearch, FaMicrophone, FaBell } from "react-icons/fa";
+import logo from "../assets/axion-logo.png";
 
 function TopNavBar() {
   return (
     <header className="top-nav">
-      <img src="../assets/axion-logo.png" alt="Axion Music" className="logo" />
+      <img src={logo} className="logo" />
 
       <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
         <FaSearch className="search-icon" />

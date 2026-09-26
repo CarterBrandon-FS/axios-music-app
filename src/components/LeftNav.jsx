@@ -3,7 +3,7 @@ import { HiOutlineUser } from "react-icons/hi";
 import { RxDashboard } from "react-icons/rx";
 import { LuMessageSquareMore, LuLibraryBig, LuSettings } from "react-icons/lu";
 import { RiPlayListFill } from "react-icons/ri";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MENU_ITEMS = [
   { to: "/user", icon: <HiOutlineUser />, label: "Profile" },
@@ -15,16 +15,17 @@ const MENU_ITEMS = [
 ];
 
 const PLAYLISTS = [
-  { to: "/liked", title: "Liked Songs", sub: "Auto Playlist" },
-  { to: "/cool-chill", title: "Cool Chill", sub: "Axxon Jaxxon" },
-  { to: "/old-school", title: "Old School", sub: "Axxon Jaxxon" },
-  { to: "/rap", title: "Rap", sub: "Axxon Jaxxon" },
+  { title: "Liked Songs", sub: "Auto Playlist" },
+  { title: "Cool Chill", sub: "Axxon Jaxxon" },
+  { title: "Old School", sub: "Axxon Jaxxon" },
+  { title: "Rap", sub: "Axxon Jaxxon" },
 ];
 
 function LeftNav() {
   return (
     <aside className="left-nav">
       <h3>Menu</h3>
+      <div className="nav-divider" />
       <nav>
         {MENU_ITEMS.map(({ to, icon, label }) => (
           <NavLink key={to} to={to} end className="nav-item">
@@ -34,22 +35,25 @@ function LeftNav() {
         ))}
       </nav>
 
+      <div className="nav-divider" />
+
       <h3>Playlists</h3>
       <nav>
-        <Link to="/playlists" className="nav-item highlight">
+        <div className="nav-item highlight">
           <RiPlayListFill />
           <span>Playlists</span>
-        </Link>
+        </div>
 
-        {PLAYLISTS.map(({ to, title, sub }) => (
-          <Link key={to} to={to} className="nav-item">
+        {PLAYLISTS.map(({ title, sub }) => (
+          <div key={title} className="nav-item">
             <span>
               {title}
               <small>{sub}</small>
             </span>
-          </Link>
+          </div>
         ))}
       </nav>
+      <div className="nav-divider" />
     </aside>
   );
 }

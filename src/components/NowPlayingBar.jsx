@@ -4,13 +4,12 @@ import {
   FaRepeat,
   FaBackwardStep,
   FaForwardStep,
-  FaCirclePlay,
-  FaCirclePause,
+  FaPlay,
+  FaPause,
   FaShuffle,
 } from "react-icons/fa6";
 import {
   IoVolumeHighOutline,
-  IoVolumeMuteOutline,
   IoHeartOutline,
   IoShareSocialOutline,
   IoBluetooth,
@@ -24,7 +23,8 @@ function NowPlayingBar({
   onToggle,
   onRepeat,
   onShuffle,
-  onPlayPaus,
+  onPrevious,
+  onNext,
 }) {
   return (
     <footer className="now-playing-bar">
@@ -61,15 +61,23 @@ function NowPlayingBar({
           >
             <FaShuffle />
           </button>
+
           <button
             className="np-icon-btn"
-            onClick={onToggle}
-            aria-label={isPlaying ? "Play" : "Pause"}
+            onClick={onPrevious}
+            aria-label="Previous"
           >
-            {isPlaying ? <FaCirclePlay /> : <FaCirclePause />}
+            <FaBackwardStep />
+          </button>
+          <button
+            className="np-play-btn"
+            onClick={onToggle}
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? <FaPause /> : <FaPlay />}
           </button>
 
-          <button className="np-icon-btn" aria-label="Next">
+          <button className="np-icon-btn" onClick={onNext} aria-label="Next">
             <FaForwardStep />
           </button>
 
