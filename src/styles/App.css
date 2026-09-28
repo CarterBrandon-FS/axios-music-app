@@ -1,7 +1,7 @@
 /* -----Layout------ */
 .app {
   display: grid;
-  grid-template-rows: var(-topnav-height) 1fr;
+  grid-template-rows: var(--topnav-height) 1fr;
   height: calc(100vh - var(--player-height));
   overflow: hidden;
 }
@@ -35,30 +35,49 @@
   background: transparent;
   border-bottom: 1px solid var(--border-subtle);
   flex-shrink: 0;
+  height: 100%;
 }
 
 .top-nav .logo {
-  width: 44px;
-  height: 44px;
+  width: 62px;
+  height: 68px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
+.top-nav .logo-name {
+  font-family: var(--logo-font);
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--accent-color);
+}
+
 .search-bar {
   flex: 1;
-  max-width: 520px;
+  max-width: 820px;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
   background: var(--bg-secondary);
   border-radius: var(--radius-pill);
-  border: 1px solid transparent;
-  background-image:
-    linear-gradient(var(--bg-secondary), var(--bg-secondary)),
-    var(--accent-gradient-h);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  position: relative;
+  margin: 0 auto;
+}
+
+.search-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  padding: 1px;
+  background: var(--accent-gradient-h);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .search-bar input {
@@ -80,7 +99,7 @@
 }
 
 .mic-icon {
-  color: var(--accent-teal);
+  color: var(--accent-color);
   font-size: 16px;
   cursor: pointer;
 }
@@ -88,8 +107,18 @@
 .top-nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   margin-left: auto;
+}
+
+.ultra-text {
+  background: var(--accent-gradient-h);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .ultra-btn {
@@ -99,6 +128,7 @@
   font-size: 14px;
   font-weight: 500;
   padding: 8px 12px;
+  margin-right: 16px;
 }
 
 .ultra-btn:hover {
@@ -109,7 +139,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--accent-gradient);
+  background: transparent;
   color: var(--text-primary);
   font-weight: 700;
   font-size: 15px;
@@ -118,6 +148,22 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--accent-gradient-h);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .user-text {
@@ -324,6 +370,7 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+  padding-left: 3px;
   transition: transform 0.15s ease;
 }
 
@@ -407,4 +454,118 @@
 .page p {
   color: var(--text-secondary);
   font-size: 14px;
+}
+
+/* ------Album Card-------- */
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.album-card-art {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: var(--bg-card);
+  cursor: pointer;
+  display: block;
+}
+
+.album-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-card);
+}
+
+.album-card-play {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+  pointer-events: none;
+  opacity: 1;
+  padding-left: 2px;
+}
+
+.album-card-art:hover .album-card-play {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.album-card-artist {
+  margin: 12px 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-card-meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -----Card row------- */
+
+.card-row {
+  margin-bottom: 32px;
+}
+
+.card-row-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+
+.card-row-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+}
+
+.card-row-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.card-row-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-row-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+.card-row-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
 }

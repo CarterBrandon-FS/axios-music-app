@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import TopNavBar from "./components/TopNavBar";
 import LeftNav from "./components/LeftNav";
 import NowPlayingBar from "./components/NowPlayingBar";
@@ -43,34 +43,6 @@ function App() {
               <Route path="/search" element={<Explore />} />
               <Route path="/details" element={<Details />} />
               <Route path="/user" element={<User />} />
-
-              {/* Menu stub pages
-              <Route path="/chat" element={<ComingSoon title="Live Chat" />} />
-              <Route path="/library" element={<ComingSoon title="Library" />} />
-              <Route
-                path="/settings"
-                element={<ComingSoon title="Settings" />}
-              />
-
-              {/* Sidebar playlist stubs (optional) */}
-              {/* <Route
-                path="/playlists"
-                element={<ComingSoon title="Playlists" />}
-              />
-              <Route
-                path="/liked"
-                element={<ComingSoon title="Liked Songs" />}
-              />
-              <Route
-                path="/cool-chill"
-                element={<ComingSoon title="Cool Chill" />}
-              />
-              <Route
-                path="/old-school"
-                element={<ComingSoon title="Old School" />}
-              />
-              <Route path="/rap" element={<ComingSoon title="Rap" />} />  */}
-
               {/* Fallback */}
               <Route path="*" element={<ComingSoon title="Page Not Found" />} />
             </Routes>

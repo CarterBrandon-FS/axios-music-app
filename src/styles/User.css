@@ -1,0 +1,360 @@
+/* -----User Page Layout----------- */
+.user-page {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+.user-main {
+  min-width: 0;
+}
+
+/* ------User Header------- */
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.user-avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.user-header-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.user-header-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* --------Section---------- */
+.user-section {
+  margin-bottom: 40px;
+}
+
+.user-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+
+/* -------- Artist Circle Row -------- */
+.artist-circle-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.artist-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.artist-circle img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.artist-circle-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #e8e8e8;
+}
+
+.artist-circle-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: center;
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------Quick Plays-------- */
+.quick-play-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.quick-play-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.quick-play-card:hover {
+  background: var(--bg-secondary);
+}
+
+.quick-play-art {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.quick-play-placeholder {
+  background: var(--bg-hover);
+  border: 1px solid var(--border-subtle);
+}
+
+.quick-play-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.quick-play-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quick-play-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------Favs Row------------ */
+.favs-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+/*--------- Artist Panel---------*/
+.artist-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.artist-panel-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.artist-panel-track {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.artist-panel-album {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* -------- Vinyl record for the artist photo -------- */
+.artist-panel-photo {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at center,
+      #2a2a2a 0%,
+      #2a2a2a 35%,
+      #141414 35%,
+      #1a1a1a 100%
+    ),
+    repeating-radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  background-color: #0a0a0a;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+.artist-panel-photo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0a0a0a;
+  z-index: 2;
+}
+
+.artist-panel-photo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.artist-panel-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  border: 2px solid #0a0a0a;
+  z-index: 2;
+}
+
+.artist-panel-about h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.artist-panel-bio {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-hover);
+}
+
+.artist-panel-bio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.artist-panel-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-panel-name span {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.artist-panel-bio-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-hover);
+  border-radius: 8px;
+}
+
+.verified-icon {
+  font-size: 16px;
+  color: #1ce8d0;
+}
+
+.artist-panel-name small {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.follow-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  color: transparent;
+  background-image: var(--accent-gradient-h);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.15s ease;
+}
+
+.follow-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  padding: 1px;
+  background: var(--accent-gradient-h);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.follow-btn:hover {
+  opacity: 0.8;
+}

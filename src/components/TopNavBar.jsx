@@ -5,6 +5,7 @@ function TopNavBar() {
   return (
     <header className="top-nav">
       <img src={logo} className="logo" />
+      <div className="logo-name">axion</div>
 
       <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
         <FaSearch className="search-icon" />
@@ -13,13 +14,14 @@ function TopNavBar() {
       </form>
 
       <nav className="top-nav-actions">
-        <button className="ultra-btn">Get ULTRA</button>
+        <button className="ultra-btn">
+          Get <span className="ultra-text">ULTRA</span>
+        </button>
         <button className="avatar">A</button>
         <span className="user-text">
           <strong>Axxon Jaxxon</strong>
           <small>Premium</small>
         </span>
-
         <button className="icon-btn" aria-label="Notifications">
           <FaBell />
         </button>
