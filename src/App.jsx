@@ -9,6 +9,7 @@ import User from "./pages/User";
 import Details from "./pages/Details";
 import Explore from "./pages/Explore";
 import ComingSoon from "./pages/ComingSoon";
+import Settings from "./pages/Settings";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -43,7 +44,7 @@ function App() {
               <Route path="/search" element={<Explore />} />
               <Route path="/details" element={<Details />} />
               <Route path="/user" element={<User />} />
-              {/* Fallback */}
+              <Route path="/settings" element={<Settings />} />"{/* Fallback */}
               <Route path="*" element={<ComingSoon title="Page Not Found" />} />
             </Routes>
           </main>
