@@ -1,6 +1,6 @@
 # 💻 Project & Portfolio II
 
-# Project Name: WDP2 Portfolio Project
+# Project Name: Axion Music
 
 ### Student First & Last Name
 
@@ -38,7 +38,7 @@ For each Milestone #2-4, you should use all 4 icons.
 For this milestone you will have created a wireframe prototype in Figma.  
 Post your link here, so you have easy access to it.
 
-![View Figma Prototype](https://www.figma.com/design/A2900fzgq6J3fBhWvSF5x6/Axion-Music?node-id=3-3758&t=MnLzGs9boib0eoJv-1)
+[View Figma Prototype](https://www.figma.com/design/A2900fzgq6J3fBhWvSF5x6/Axion-Music?node-id=3-3758&t=MnLzGs9boib0eoJv-1)
 
 <br>
 
@@ -46,35 +46,35 @@ Post your link here, so you have easy access to it.
 
 ⚙️ Overview - This week I created a new React project using Vite and set up React Router with four main views: Dashboard, Search, Detail, and User/Settings. I configured the GitHub repository with main and dev branches, added the project board, and created tracking issues for ongoing work.
 <br>
-🌵 Challenges - Write challenges here.
+🌵 Challenges - Setting up React Router and managing the initial project structure took some troubleshooting. I also ran into issues with file paths when reorganizing CSS into a dedicated styles folder, and had to debug Vite import errors by carefully checking filenames and paths.
 <br>
-🏆 Accomplishments - Write Accomplishments here.
+🏆 Accomplishments - I built a working React app with React Router across six views (Dashboard, Explore, User, Settings, Details, plus stub pages). I completed the app shell (TopNav, LeftNav, NowPlayingBar) styled to match the Figma prototype, built out the Dashboard with hero banner and card rows, and created the User profile page with a vinyl-style artist panel. I also established a clean CSS architecture with a dedicated styles folder.
 <br>
-🔮 Next Steps - Write your next steps here.
+🔮 Next Steps - Next, I'll integrate the iTunes Search API or similar API to populate the Explore page with real data. I'll also add a search bar into the Explore page to display real search results, add Local Storage to persist user favorites and recently played tracks, and add a second library (likely date-fns for date formatting or framer-motion for animations). I'll also refine the visual polish and fill in the Details page with real track data.
 
 <br>
 
 Please discuss the following:
 
-#### Page #1
+#### Page #1 - Dashboard
 
-- Name
-- Purpose
+- Name: Dashboard
+- Purpose: Main landing page displaying a hero banner (Editor's pick), New Releases and Editor's Picks card rows, genre pills, and a spotlight artist panel.
 
-#### Page #2
+#### Page #2 — Explore
 
-- Name
-- Purpose
+- Name: Explore (Search)
+- Purpose: Browse and search for music. Includes New Releases and Editor's Picks card rows, mood/genre pills for filtering, and Top 5 ranked lists (Hip-Hop, Pop). Will connect to the iTunes Search API in Milestone 3.
 
-#### Page #3
+#### Page #3 — User Profile
 
-- Name
-- Purpose
+- Name: User / Profile
+- Purpose: Displays the user's listening history, favorites, and personalized content. Includes Most Listened To Artist row (artist circles), Quick Plays, Favs row, and a vinyl-style Artist Panel featuring the artist of the month.
 
-#### Page #4
+#### Page #4 — Settings
 
-- Name
-- Purpose
+- Name: Settings
+- Purpose: User account management and app preferences. Sections include Account (name, email, password), Playback (audio quality, autoplay, crossfade, volume normalization), Appearance (theme, accent color), Notifications (new releases, artist updates, chat mentions, email), and About (app version, terms, sign out).
 
 #### Remember that creating a project board, issues, and milestones is 50% of your grade!
 

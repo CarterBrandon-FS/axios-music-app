@@ -1,6 +1,8 @@
 /* -----Settings Page----------- */
 .settings-page {
-  max-width: 720px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .settings-page h2 {
